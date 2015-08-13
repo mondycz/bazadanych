@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:gravity="center_horizontal"
+    tools:context="pl.com.wwsis.bazadanych.NewContactActivity">
+
+    <EditText
+        android:id="@+id/contactname"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="contact"/>
+    <EditText
+        android:id="@+id/mobielnr"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="mobile number"
+        android:layout_below="@+id/contactname"
+        />
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="email"
+        android:layout_below="@+id/mobielnr"
+        />
+    <Button
+        android:id="@+id/savebtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="save"
+        android:layout_below="@+id/email"
+        android:onClick="addNewContact"/>
+
+</RelativeLayout>
