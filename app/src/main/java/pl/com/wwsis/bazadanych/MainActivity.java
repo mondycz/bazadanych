@@ -41,4 +41,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, NewContactActivity.class);
         startActivity(intent);
     }
+
+    public void moveToViewActivity(View view) {
+        Intent intent = new Intent(this, DataListActivity.class);
+        startActivity(intent);
+    }
 }

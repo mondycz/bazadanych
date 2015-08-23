@@ -2,13 +2,12 @@ package pl.com.wwsis.bazadanych;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-/**
- * Created by Jazera on 09.08.15.
- */
+
 public class UserDbHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "USERINFO.DB";
@@ -39,6 +38,15 @@ public class UserDbHelper extends SQLiteOpenHelper {
         db.insert(UserContract.NewUserInfo.TABLE_NAME, null, contentValues);
         Log.e("DATABASE OPERATIONS", "One row inserted ...");
 
+    }
+
+    public Cursor getInformation(SQLiteDatabase db) {
+
+        Cursor cursor;
+        String[] projections = {UserContract.NewUserInfo.USER_NAME, UserContract.NewUserInfo.USER_MOB,
+                UserContract.NewUserInfo.USER_MAIL};
+        cursor = db.query(UserContract.NewUserInfo.TABLE_NAME, projections, null, null, null, null, null);
+        return cursor;
     }
 
     @Override
